@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://bwarc7iyqwjyp"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VScrollBar" type="VScrollBar" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+color = Color(0.427451, 0.27451, 0.152941, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+color = Color(0.501961, 0.172549, 0.368627, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+color = Color(0.25098, 0.341176, 0.282353, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+color = Color(0.27451, 0.321569, 0.34902, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+color = Color(0.105882, 0.345098, 0.423529, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+color = Color(0.427451, 0.27451, 0.152941, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+color = Color(0.501961, 0.172549, 0.368627, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+color = Color(0.25098, 0.341176, 0.282353, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+color = Color(0.27451, 0.321569, 0.34902, 1)
+
+[node name="ColorRect10" type="ColorRect" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+color = Color(0.105882, 0.345098, 0.423529, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+color = Color(0.427451, 0.27451, 0.152941, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.619608, 0.490196, 0.156863, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0we5r3f8xc3u"]
+
+[ext_resource type="Texture2D" uid="uid://dabs50oux3ouk" path="res://Assets/SOC LOGO.png" id="1_hdtvs"]
+[ext_resource type="StyleBox" uid="uid://bpa0jeurqmndr" path="res://Assets/styles/menuButton.tres" id="2_8g8wn"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 5.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.427451, 0.27451, 0.152941, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -240.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -4.36733e-05
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_hdtvs")
+
+[node name="buttons" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/buttons"]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer/buttons/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+theme_override_styles/normal = ExtResource("2_8g8wn")
+text = "PLAY"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/buttons"]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+
+[node name="Select" type="Button" parent="MarginContainer/VBoxContainer/buttons/MarginContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+theme_override_styles/normal = ExtResource("2_8g8wn")
+text = "SELECT LESSONS"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/buttons"]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+
+[node name="Option" type="Button" parent="MarginContainer/VBoxContainer/buttons/MarginContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+theme_override_styles/normal = ExtResource("2_8g8wn")
+text = "OPTIONS"
+
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer/buttons"]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/buttons/MarginContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+theme_override_styles/normal = ExtResource("2_8g8wn")
+text = "QUIT
+"
