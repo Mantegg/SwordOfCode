@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://hu1v677gvvig"]
+
+[ext_resource type="Script" path="res://Overworld/Characters/Player.gd" id="1_13hae"]
+[ext_resource type="Texture2D" uid="uid://c4fqid13h7egl" path="res://Assets/mainCharacter.png" id="1_dfow4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48k7k"]
+size = Vector2(55, 113)
+
+[sub_resource type="Animation" id="Animation_n11x5"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.139626, 0.0, -0.139626, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_x6vjt"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_cohg5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.139626]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_noyrw"]
+_data = {
+"RESET": SubResource("Animation_cohg5"),
+"idle": SubResource("Animation_x6vjt"),
+"walk": SubResource("Animation_n11x5")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_13hae")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+rotation = 0.139626
+scale = Vector2(0.124, 0.124)
+texture = ExtResource("1_dfow4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.500004, 0.499996)
+shape = SubResource("RectangleShape2D_48k7k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_noyrw")
+}

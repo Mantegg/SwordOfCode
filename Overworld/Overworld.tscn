@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b653rd55lmn2h"]
+
+[ext_resource type="Texture2D" uid="uid://ckl1mvd8mny0t" path="res://Assets/map1.png" id="1_tl0og"]
+[ext_resource type="PackedScene" uid="uid://hu1v677gvvig" path="res://Overworld/Characters/Main.tscn" id="2_wo50a"]
+
+[node name="Overworld" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1170.0
+offset_bottom = 658.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 76.0
+offset_top = -180.0
+offset_right = 1106.0
+offset_bottom = 850.0
+texture = ExtResource("1_tl0og")
+expand_mode = 1
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_wo50a")]
+position = Vector2(452, 336)
+motion_mode = 1
