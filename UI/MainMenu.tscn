@@ -96,5 +96,53 @@ theme_override_styles/normal = ExtResource("2_8g8wn")
 text = "QUIT
 "
 
+[node name="Optionpopup" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Optionpopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.8107
+
+[node name="MarginContainer" type="MarginContainer" parent="Optionpopup/AspectRatioContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 165
+theme_override_constants/margin_top = 95
+theme_override_constants/margin_right = 165
+theme_override_constants/margin_bottom = 95
+
+[node name="ColorRect" type="ColorRect" parent="Optionpopup/AspectRatioContainer/MarginContainer"]
+layout_mode = 2
+color = Color(0.647059, 0.517647, 0.321569, 1)
+
+[node name="Label" type="Label" parent="Optionpopup/AspectRatioContainer/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 23.0
+text = "Option"
+
+[node name="CheckBox" type="CheckBox" parent="Optionpopup/AspectRatioContainer/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 120.109
+offset_right = 141.0
+offset_bottom = 144.109
+
+[node name="Label2" type="Label" parent="Optionpopup/AspectRatioContainer/MarginContainer/ColorRect"]
+offset_left = 148.0
+offset_top = 119.109
+offset_right = 202.0
+offset_bottom = 142.109
+text = "Sounds"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/buttons/MarginContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/buttons/MarginContainer2/Select" to="." method="_on_select_pressed"]

@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cu6xpks5r2q05"]
+[gd_scene load_steps=2 format=3 uid="uid://cu6xpks5r2q05"]
+
+[ext_resource type="Script" path="res://UI/docMenu.gd" id="1_37ceq"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_37ceq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -94,3 +97,5 @@ custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_vertical = 3
 text = "Coding"
+
+[connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
