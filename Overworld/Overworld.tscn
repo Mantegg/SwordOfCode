@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b653rd55lmn2h"]
+[gd_scene load_steps=4 format=3 uid="uid://b653rd55lmn2h"]
 
 [ext_resource type="Texture2D" uid="uid://ckl1mvd8mny0t" path="res://Assets/map1.png" id="1_tl0og"]
 [ext_resource type="PackedScene" uid="uid://hu1v677gvvig" path="res://Overworld/Characters/Main.tscn" id="2_wo50a"]
+[ext_resource type="PackedScene" uid="uid://du5nhsgb2to7p" path="res://Overworld/Characters/npc.tscn" id="3_px7dw"]
 
 [node name="Overworld" type="Node2D"]
 
@@ -17,6 +18,9 @@ offset_bottom = 850.0
 texture = ExtResource("1_tl0og")
 expand_mode = 1
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_wo50a")]
+[node name="Player" parent="." instance=ExtResource("2_wo50a")]
 position = Vector2(452, 336)
 motion_mode = 1
+
+[node name="npc" parent="." instance=ExtResource("3_px7dw")]
+position = Vector2(792, 356)

@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 100.0
 @onready var animationPlayer = $AnimationPlayer
+@onready var area = $Area2D
 
 func _physics_process(delta):
 	
@@ -15,3 +16,12 @@ func _physics_process(delta):
 		animationPlayer.play("walk")
 	
 	move_and_slide()
+	
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("interect"):
+		$"F button".visible = true
+
+
+func _on_area_2d_body_exited(body):
+	if body.is_in_group("interect"):
+		$"F button".visible = false

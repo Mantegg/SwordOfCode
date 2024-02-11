@@ -138,6 +138,7 @@ offset_right = 141.0
 offset_bottom = 144.109
 
 [node name="Label2" type="Label" parent="Optionpopup/AspectRatioContainer/MarginContainer/ColorRect"]
+layout_mode = 0
 offset_left = 148.0
 offset_top = 119.109
 offset_right = 202.0

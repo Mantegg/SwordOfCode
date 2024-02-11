@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://hu1v677gvvig"]
+[gd_scene load_steps=10 format=3 uid="uid://hu1v677gvvig"]
 
 [ext_resource type="Script" path="res://Overworld/Characters/Player.gd" id="1_13hae"]
 [ext_resource type="Texture2D" uid="uid://c4fqid13h7egl" path="res://Assets/mainCharacter.png" id="1_dfow4"]
+[ext_resource type="Texture2D" uid="uid://c2r1dyrqluao2" path="res://Assets/btnF.png" id="3_gxfdl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48k7k"]
 size = Vector2(55, 113)
@@ -60,7 +61,10 @@ _data = {
 "walk": SubResource("Animation_n11x5")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_7em0l"]
+radius = 66.0
+
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_13hae")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -68,6 +72,12 @@ position = Vector2(1, 0)
 rotation = 0.139626
 scale = Vector2(0.124, 0.124)
 texture = ExtResource("1_dfow4")
+
+[node name="F button" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-4.76837e-07, -87)
+scale = Vector2(0.061551, 0.0564443)
+texture = ExtResource("3_gxfdl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.500004, 0.499996)
@@ -77,3 +87,11 @@ shape = SubResource("RectangleShape2D_48k7k")
 libraries = {
 "": SubResource("AnimationLibrary_noyrw")
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_7em0l")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
