@@ -80,6 +80,7 @@ scale = Vector2(0.061551, 0.0564443)
 texture = ExtResource("3_gxfdl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-0.500004, 0.499996)
 shape = SubResource("RectangleShape2D_48k7k")
 
@@ -89,6 +90,8 @@ libraries = {
 }
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_7em0l")

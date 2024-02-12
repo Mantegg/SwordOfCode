@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://b653rd55lmn2h"]
+[gd_scene load_steps=7 format=3 uid="uid://b653rd55lmn2h"]
 
 [ext_resource type="Texture2D" uid="uid://ckl1mvd8mny0t" path="res://Assets/map1.png" id="1_tl0og"]
 [ext_resource type="PackedScene" uid="uid://hu1v677gvvig" path="res://Overworld/Characters/Main.tscn" id="2_wo50a"]
 [ext_resource type="PackedScene" uid="uid://du5nhsgb2to7p" path="res://Overworld/Characters/npc.tscn" id="3_px7dw"]
+[ext_resource type="PackedScene" uid="uid://b1wgpgyse0rpv" path="res://Overworld/actionable.tscn" id="4_msbkf"]
+[ext_resource type="Resource" uid="uid://braixsrtd74y6" path="res://Overworld/dialogue/test.dialogue" id="5_ei6mv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_slfux"]
+radius = 64.0312
 
 [node name="Overworld" type="Node2D"]
 
@@ -24,3 +29,9 @@ motion_mode = 1
 
 [node name="npc" parent="." instance=ExtResource("3_px7dw")]
 position = Vector2(792, 356)
+
+[node name="actionable" parent="npc" instance=ExtResource("4_msbkf")]
+dialogueResource = ExtResource("5_ei6mv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc/actionable"]
+shape = SubResource("CircleShape2D_slfux")

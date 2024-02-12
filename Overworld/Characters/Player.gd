@@ -16,7 +16,14 @@ func _physics_process(delta):
 		animationPlayer.play("walk")
 	
 	move_and_slide()
-	
+
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("interect"):
+		var actionable = $Area2D.get_overlapping_areas()
+		if actionable.size() > 0:
+			actionable[0].action()
+			return
+
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("interect"):
 		$"F button".visible = true

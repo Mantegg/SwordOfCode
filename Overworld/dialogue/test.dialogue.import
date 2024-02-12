@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://braixsrtd74y6"
+path="res://.godot/imported/test.dialogue-f9ae807108b91be64bde23d0b883c448.tres"
+
+[deps]
+
+source_file="res://Overworld/dialogue/test.dialogue"
+dest_files=["res://.godot/imported/test.dialogue-f9ae807108b91be64bde23d0b883c448.tres"]
+
+[params]
+
+defaults=true
