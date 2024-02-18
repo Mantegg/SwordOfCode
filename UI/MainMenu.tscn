@@ -45,7 +45,9 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(31, 0)
 layout_mode = 2
+size_flags_vertical = 3
 texture = ExtResource("1_hdtvs")
 
 [node name="buttons" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
@@ -97,6 +99,7 @@ text = "QUIT
 "
 
 [node name="Optionpopup" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
