@@ -122,5 +122,12 @@ text = "
 "
 autowrap_mode = 3
 
+[node name="HTTPRequestInput" type="HTTPRequest" parent="."]
+
+[node name="HTTPRequestOutput" type="HTTPRequest" parent="."]
+
 [connection signal="pressed" from="HSplitContainer/ColorRect2/VBoxContainer/btnRun" to="." method="_on_btn_run_pressed"]
 [connection signal="pressed" from="HSplitContainer/ColorRect2/VBoxContainer/btnReset" to="." method="_on_btn_reset_pressed"]
+[connection signal="request_completed" from="HTTPRequestInput" to="." method="_on_http_request_request_completed"]
+[connection signal="request_completed" from="HTTPRequestOutput" to="." method="_on_http_request_request_completed"]
+[connection signal="request_completed" from="HTTPRequestOutput" to="." method="_on_http_request_output_request_completed"]

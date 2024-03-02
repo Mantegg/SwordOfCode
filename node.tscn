@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://qi5btulr0x1q"]
+
+[ext_resource type="Script" path="res://test.gd" id="1_lsiwe"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_lsiwe")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 449.0
+offset_top = 169.0
+offset_right = 584.0
+offset_bottom = 246.0
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
