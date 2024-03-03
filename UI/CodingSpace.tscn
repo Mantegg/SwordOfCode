@@ -51,9 +51,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Public class test{
-    Public static void main(String[] args){
-		System.out.println(\"Hello, World!\");
+text = "public class Main {
+    public static void main(String[] args) {
+        System.out.println(\"hello, world\");
     }
 }"
 placeholder_text = "Your code here"

@@ -5,10 +5,10 @@ extends Control
 func _on_btn_run_pressed():
 	var javaCode = $HSplitContainer/ColorRect2/Code.text
 	var encodedJavaCode = javaCode.uri_encode()
+	#print(javaCode)
 	#print(encodedJavaCode)
-	
 	$HTTPRequestInput.cancel_request()
-	$HTTPRequestInput.request("http://localhost/SwordOfCode/createSubmission.php?sourceCode=" + javaCode+ "")
+	$HTTPRequestInput.request("http://localhost/SwordOfCode/createSubmission.php?sourceCode=" + encodedJavaCode)
 	
 	
 	$HSplitContainer/TabContainer.current_tab = 1
@@ -18,7 +18,7 @@ func _on_btn_reset_pressed():
 
 func _on_http_request_request_completed(result, response_code, headers, body):
 	var output = JSON.parse_string(body.get_string_from_utf8())
-
+	print(output["token"])
 	$HTTPRequestOutput.cancel_request()
 	$HTTPRequestOutput.request("http://localhost/SwordOfCode/getSubmission.php?token="+output["token"])
 	
@@ -26,6 +26,7 @@ func _on_http_request_request_completed(result, response_code, headers, body):
 
 func _on_http_request_output_request_completed(result, response_code, headers, body):
 	var output = JSON.parse_string(body.get_string_from_utf8())
-	print(output["source_code"])
+	print(output)
 	
 	$HTTPRequestOutput.cancel_request()
+
