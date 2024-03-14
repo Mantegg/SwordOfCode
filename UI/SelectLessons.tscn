@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwarc7iyqwjyp"]
+[gd_scene load_steps=3 format=3 uid="uid://bwarc7iyqwjyp"]
 
 [ext_resource type="Script" path="res://UI/SelectLessons.gd" id="1_7l5s1"]
+[ext_resource type="Texture2D" uid="uid://di4saqk627tjc" path="res://Assets/Background/gridBg.png" id="2_dm43d"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -25,10 +26,37 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.1
 color = Color(0.427451, 0.27451, 0.152941, 1)
 
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="btnBack" type="Button" parent="VBoxContainer/ColorRect/HBoxContainer"]
+layout_mode = 2
+text = "BACK
+"
+icon_alignment = 1
+vertical_icon_alignment = 2
+expand_icon = true
+
 [node name="ColorRect2" type="ColorRect" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-color = Color(0.619608, 0.490196, 0.156863, 1)
+color = Color(0.619608, 0.490196, 0.156863, 0.729412)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="VBoxContainer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="VBoxContainer/ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1152, 648)
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/ParallaxBackground/ParallaxLayer"]
+scale = Vector2(0.900781, 0.901389)
+texture = ExtResource("2_dm43d")
+centered = false
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2
@@ -46,60 +74,35 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_vertical = 3
-text = "Lesson 1"
+text = "Lesson 1 - Introduction to Object Oriented Programming"
 
 [node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_vertical = 3
-text = "Lesson 2"
+disabled = true
+text = "Lesson 2 - Fundamentals of the Java programming language"
 
 [node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_vertical = 3
-text = "Lesson 3"
+disabled = true
+text = "Lesson 3 - Classes and Objects"
 
 [node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_vertical = 3
-text = "Lesson 4"
+disabled = true
+text = "Lesson 4 - Inheritance and Polymorphism"
 
 [node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_vertical = 3
-text = "Lesson 5"
+disabled = true
+text = "Lesson 5 - Exception Handling"
 
-[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-size_flags_vertical = 3
-text = "Lesson 6"
-
-[node name="Button7" type="Button" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-size_flags_vertical = 3
-text = "Lesson 7"
-
-[node name="Button8" type="Button" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-size_flags_vertical = 3
-text = "Lesson 8"
-
-[node name="Button9" type="Button" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-size_flags_vertical = 3
-text = "Lesson 9"
-
-[node name="Button10" type="Button" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-size_flags_vertical = 3
-text = "Lesson 10"
-
+[connection signal="pressed" from="VBoxContainer/ColorRect/HBoxContainer/btnBack" to="." method="_on_btn_back_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

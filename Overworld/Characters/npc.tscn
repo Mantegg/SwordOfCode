@@ -1,16 +1,63 @@
-[gd_scene load_steps=3 format=3 uid="uid://du5nhsgb2to7p"]
+[gd_scene load_steps=7 format=3 uid="uid://du5nhsgb2to7p"]
 
-[ext_resource type="Texture2D" uid="uid://cldl0ybwlvphi" path="res://Assets/npc.png" id="1_iuu7q"]
+[ext_resource type="Texture2D" uid="uid://cpq7qompajp8r" path="res://Assets/sprites/npc1.png" id="1_162mm"]
+[ext_resource type="Script" path="res://Overworld/Characters/npc.gd" id="1_kerjs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rmu0q"]
 size = Vector2(68, 108)
 
+[sub_resource type="Animation" id="Animation_hw6gq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_l51ch"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bo1us"]
+_data = {
+"RESET": SubResource("Animation_hw6gq"),
+"idle": SubResource("Animation_l51ch")
+}
+
 [node name="npc" type="CharacterBody2D" groups=["interect"]]
+texture_filter = 1
+script = ExtResource("1_kerjs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.124, 0.124)
-texture = ExtResource("1_iuu7q")
+position = Vector2(0, -16)
+scale = Vector2(5, 5)
+texture = ExtResource("1_162mm")
+hframes = 8
+vframes = 6
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_rmu0q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bo1us")
+}

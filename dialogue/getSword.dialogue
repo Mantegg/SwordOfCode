@@ -1,0 +1,19 @@
+~ start
+
+[shake rate=20 level=10]???[/shake]: Greetings! Fellow human!
+[shake rate=20 level=10]???[/shake]: Thou, who hath bestowed a salutation upon the realm, I shall be thy guide in the arcane art of coding. Together, we shall forge the destiny of the future era, wielding the sword of programming prowess.
+???: Oh! am I going too far?
+Sword of Code: Hello there, I am the "Sword of Code". I may looks like a regular tool but with my power, I can reshape this terrain into the world of future!
+Sword of Code: basically you can use me to create anything by using code.
+Sword of Code: wait, you don't know what coding is? which era am I? I may have travelled too far back into medieval era.
+Sword of Code: as you the one who pulled me out of the stone, I'm willing to help you by teaching you the art of coding.
+Sword of Code: does that interest your ears?
+- Yes!
+	Sword of Code: Great! I'll teach you everything that I know. From today, you will be my apprentice!
+- NO
+	Sword of Code: sorry but from what I listened, it sounds like !NO which mean YES
+Sword of Code: Let's start from the basic
+
+do emit("test","emitted") 
+
+=> END

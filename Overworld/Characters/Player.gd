@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 100.0
+const SPEED = 250.0
 @onready var animationPlayer = $AnimationPlayer
 @onready var area = $Area2D
 
@@ -9,7 +9,12 @@ func _physics_process(delta):
 	
 	velocity = Vector2(Input.get_action_strength("right") - Input.get_action_strength("left"), 
 	Input.get_action_strength("down")- Input.get_action_strength("up")).normalized() * SPEED
-
+	
+	if velocity.x < 0:
+		$Sprite2D.flip_h = true
+	elif velocity.x > 0:
+		$Sprite2D.flip_h = false
+	
 	if velocity == Vector2.ZERO:
 		animationPlayer.play("idle")
 	else:

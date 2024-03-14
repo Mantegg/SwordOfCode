@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu6xpks5r2q05"]
+[gd_scene load_steps=3 format=3 uid="uid://cu6xpks5r2q05"]
 
 [ext_resource type="Script" path="res://UI/docMenu.gd" id="1_37ceq"]
+[ext_resource type="Texture2D" uid="uid://di4saqk627tjc" path="res://Assets/Background/gridBg.png" id="2_nekwc"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -25,10 +26,33 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.1
 color = Color(0.427451, 0.27451, 0.152941, 1)
 
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="btnBack" type="Button" parent="VBoxContainer/ColorRect/HBoxContainer"]
+layout_mode = 2
+text = "BACK"
+
 [node name="ColorRect2" type="ColorRect" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-color = Color(0.619608, 0.490196, 0.156863, 1)
+color = Color(0.619608, 0.490196, 0.156863, 0.729412)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="VBoxContainer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="VBoxContainer/ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1152, 648)
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/ParallaxBackground/ParallaxLayer"]
+scale = Vector2(0.900781, 0.901389)
+texture = ExtResource("2_nekwc")
+centered = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(0, 60)
@@ -63,39 +87,129 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 10
 
-[node name="RichTextLabel" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="part1" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+
+[node name="txtTitle" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_font_sizes/font_size = 81
-text = "LESSON TITLE"
+text = "Introduction to Object Oriented Programming"
 horizontal_alignment = 1
+autowrap_mode = 2
 
-[node name="RichTextLabel2" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 31
-text = "In this lesson you will be learning about bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
-autowrap_mode = 1
-
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="RichTextLabel3" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="RichTextLabel2" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 31
-text = "You will also learn about bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
-autowrap_mode = 1
+text = "OOP stands for Object-Oriented Programming."
+autowrap_mode = 2
 
-[node name="HSeparator2" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="RichTextLabel4" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+text = "Procedural programming is about writing procedures or methods that perform operations on the data, while object-oriented programming is about creating objects that contain both data and methods."
+autowrap_mode = 2
+
+[node name="RichTextLabel5" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+text = "Object-oriented programming has several advantages over procedural programming:
+
+-OOP is faster and easier to execute
+-OOP provides a clear structure for the programs
+-OOP helps to keep the Java code DRY \"Don't Repeat Yourself\", and makes the code easier to maintain, modify and debug
+-OOP makes it possible to create full reusable applications with less code and shorter development time"
+autowrap_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="Button" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="MAQ" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
+layout_mode = 2
+
+[node name="Maq Title" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+text = "Question:"
+autowrap_mode = 2
+
+[node name="RichTextLabel3" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+text = "From the information about Object-Oriented Programming (OOP), which statement is correct?"
+autowrap_mode = 2
+
+[node name="questions" type="GridContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 2
+
+[node name="Button" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/questions"]
+layout_mode = 2
+text = "slower and harder to execute."
+alignment = 0
+
+[node name="Button2" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/questions"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "provides a clear structure for the programs."
+alignment = 0
+text_overrun_behavior = 2
+
+[node name="Button3" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/questions"]
+layout_mode = 2
+text = "makes the code harder to maintain, modify, and debug."
+alignment = 0
+
+[node name="Button4" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/questions"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "longer development time."
+alignment = 0
+
+[node name="part2" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer/part2"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="RichTextLabel3" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+text = "Good, let's try print Hello World using java code"
+autowrap_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer/part2"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Button" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part2"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_vertical = 3
 text = "Coding"
 
-[connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ColorRect/HBoxContainer/btnBack" to="." method="_on_btn_back_pressed"]
+[connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/questions/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/part2/Button" to="." method="_on_button_pressed"]

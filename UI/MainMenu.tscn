@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0we5r3f8xc3u"]
+[gd_scene load_steps=11 format=3 uid="uid://d0we5r3f8xc3u"]
 
 [ext_resource type="Texture2D" uid="uid://dabs50oux3ouk" path="res://Assets/SOC LOGO.png" id="1_hdtvs"]
 [ext_resource type="Script" path="res://UI/MainMenu.gd" id="1_py81k"]
 [ext_resource type="StyleBox" uid="uid://bpa0jeurqmndr" path="res://Assets/styles/menuButton.tres" id="2_8g8wn"]
+[ext_resource type="Texture2D" uid="uid://dfhni6j00dy5r" path="res://Assets/Background/layers/sky.png" id="2_nrlsi"]
+[ext_resource type="Texture2D" uid="uid://co5urc0t7glvp" path="res://Assets/Background/layers/rocks_1.png" id="3_j8we8"]
+[ext_resource type="Texture2D" uid="uid://d25q64gtuxlav" path="res://Assets/Background/layers/rocks_2.png" id="4_kp6e7"]
+[ext_resource type="Texture2D" uid="uid://ckf4whmascr57" path="res://Assets/Background/layers/clouds_1.png" id="5_4c8we"]
+[ext_resource type="Texture2D" uid="uid://wufgu6vi4qg1" path="res://Assets/Background/layers/clouds_2.png" id="6_iffxx"]
+[ext_resource type="Texture2D" uid="uid://tdc20vic0qry" path="res://Assets/Background/layers/clouds_3.png" id="7_ip4fs"]
+[ext_resource type="Texture2D" uid="uid://c8d4hmc3ivay6" path="res://Assets/Background/layers/clouds_4.png" id="8_py01d"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -20,6 +27,7 @@ size_flags_vertical = 4
 script = ExtResource("1_py81k")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,6 +35,68 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.427451, 0.27451, 0.152941, 1)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/sky"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_nrlsi")
+centered = false
+
+[node name="rocks" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/rocks"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_j8we8")
+centered = false
+
+[node name="cloud" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloud"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_4c8we")
+centered = false
+
+[node name="cloud2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloud2"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_iffxx")
+centered = false
+
+[node name="cloud3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloud3"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_ip4fs")
+centered = false
+
+[node name="cloud4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloud4"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_py01d")
+centered = false
+
+[node name="rocks2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/rocks2"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_kp6e7")
+centered = false
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -62,6 +132,7 @@ theme_override_constants/margin_right = 200
 layout_mode = 2
 theme_override_font_sizes/font_size = 51
 theme_override_styles/normal = ExtResource("2_8g8wn")
+theme_override_styles/hover = ExtResource("2_8g8wn")
 text = "PLAY"
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/buttons"]
@@ -73,6 +144,7 @@ theme_override_constants/margin_right = 200
 layout_mode = 2
 theme_override_font_sizes/font_size = 51
 theme_override_styles/normal = ExtResource("2_8g8wn")
+theme_override_styles/hover = ExtResource("2_8g8wn")
 text = "SELECT LESSONS"
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/buttons"]
@@ -84,6 +156,7 @@ theme_override_constants/margin_right = 200
 layout_mode = 2
 theme_override_font_sizes/font_size = 51
 theme_override_styles/normal = ExtResource("2_8g8wn")
+theme_override_styles/hover = ExtResource("2_8g8wn")
 text = "OPTIONS"
 
 [node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer/buttons"]
@@ -95,6 +168,7 @@ theme_override_constants/margin_right = 200
 layout_mode = 2
 theme_override_font_sizes/font_size = 51
 theme_override_styles/normal = ExtResource("2_8g8wn")
+theme_override_styles/hover = ExtResource("2_8g8wn")
 text = "QUIT
 "
 
@@ -150,3 +224,4 @@ text = "Sounds"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/buttons/MarginContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/buttons/MarginContainer2/Select" to="." method="_on_select_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/buttons/MarginContainer4/Quit" to="." method="_on_quit_pressed"]

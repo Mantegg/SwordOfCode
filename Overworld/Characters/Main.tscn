@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://hu1v677gvvig"]
 
 [ext_resource type="Script" path="res://Overworld/Characters/Player.gd" id="1_13hae"]
-[ext_resource type="Texture2D" uid="uid://c4fqid13h7egl" path="res://Assets/mainCharacter.png" id="1_dfow4"]
+[ext_resource type="Texture2D" uid="uid://clc5kohjn4oci" path="res://Assets/sprites/Player.png" id="2_1qvq1"]
 [ext_resource type="Texture2D" uid="uid://c2r1dyrqluao2" path="res://Assets/btnF.png" id="3_gxfdl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48k7k"]
@@ -21,9 +21,22 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.139626]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="Animation" id="Animation_x6vjt"]
 resource_name = "idle"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -36,6 +49,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
 
 [sub_resource type="Animation" id="Animation_n11x5"]
 resource_name = "walk"
@@ -43,7 +68,7 @@ length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath("Sprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -52,6 +77,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.139626, 0.0, -0.139626, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_noyrw"]
@@ -65,13 +102,17 @@ _data = {
 radius = 66.0
 
 [node name="Player" type="CharacterBody2D"]
+texture_filter = 1
 script = ExtResource("1_13hae")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(1, -16)
 rotation = 0.139626
-scale = Vector2(0.124, 0.124)
-texture = ExtResource("1_dfow4")
+scale = Vector2(5, 5)
+texture = ExtResource("2_1qvq1")
+hframes = 8
+vframes = 6
+frame = 1
 
 [node name="F button" type="Sprite2D" parent="."]
 visible = false
@@ -95,6 +136,10 @@ collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_7em0l")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.765, 1.765)
+position_smoothing_enabled = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
