@@ -2,7 +2,7 @@ extends Control
 
 @onready var lblOutput = $HSplitContainer/TabContainer/Output/VBoxContainer/lblOutput
 var token
-
+var test
 @onready var parallax = $VBoxContainer/ParallaxBackground
 var speed = 250
 var rotationSpeed = 0.3
