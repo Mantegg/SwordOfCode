@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwarc7iyqwjyp"]
+[gd_scene load_steps=6 format=3 uid="uid://bwarc7iyqwjyp"]
 
 [ext_resource type="Script" path="res://UI/SelectLessons.gd" id="1_7l5s1"]
+[ext_resource type="Theme" uid="uid://b6fk86oisl636" path="res://Assets/theme/panelHead.tres" id="2_bnyym"]
 [ext_resource type="Texture2D" uid="uid://di4saqk627tjc" path="res://Assets/Background/gridBg.png" id="2_dm43d"]
+[ext_resource type="FontFile" uid="uid://58l2dvgu2fya" path="res://Assets/font/GermaniaOne-Regular.ttf" id="3_o4q4o"]
+[ext_resource type="Theme" uid="uid://brndtowgbvndd" path="res://Assets/theme/buttonCourse.tres" id="5_7srm6"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -20,11 +23,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
+[node name="ColorRect" type="Panel" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.1
-color = Color(0.427451, 0.27451, 0.152941, 1)
+theme = ExtResource("2_bnyym")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ColorRect"]
 layout_mode = 1
@@ -36,11 +39,9 @@ grow_vertical = 2
 
 [node name="btnBack" type="Button" parent="VBoxContainer/ColorRect/HBoxContainer"]
 layout_mode = 2
-text = "BACK
-"
-icon_alignment = 1
-vertical_icon_alignment = 2
-expand_icon = true
+theme_override_fonts/font = ExtResource("3_o4q4o")
+theme_override_font_sizes/font_size = 36
+text = "BACK "
 
 [node name="ColorRect2" type="ColorRect" parent="VBoxContainer"]
 layout_mode = 2
@@ -74,12 +75,16 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("5_7srm6")
+theme_override_fonts/font = ExtResource("3_o4q4o")
 text = "Lesson 1 - Introduction to Object Oriented Programming"
 
 [node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("5_7srm6")
+theme_override_fonts/font = ExtResource("3_o4q4o")
 disabled = true
 text = "Lesson 2 - Fundamentals of the Java programming language"
 
@@ -87,6 +92,8 @@ text = "Lesson 2 - Fundamentals of the Java programming language"
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("5_7srm6")
+theme_override_fonts/font = ExtResource("3_o4q4o")
 disabled = true
 text = "Lesson 3 - Classes and Objects"
 
@@ -94,6 +101,8 @@ text = "Lesson 3 - Classes and Objects"
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("5_7srm6")
+theme_override_fonts/font = ExtResource("3_o4q4o")
 disabled = true
 text = "Lesson 4 - Inheritance and Polymorphism"
 
@@ -101,6 +110,8 @@ text = "Lesson 4 - Inheritance and Polymorphism"
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("5_7srm6")
+theme_override_fonts/font = ExtResource("3_o4q4o")
 disabled = true
 text = "Lesson 5 - Exception Handling"
 

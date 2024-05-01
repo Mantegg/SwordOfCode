@@ -1,0 +1,244 @@
+[gd_scene load_steps=7 format=3 uid="uid://chkwkfj1lel01"]
+
+[ext_resource type="Script" path="res://Course/Main/Topic1/1.1.gd" id="1_h8wuk"]
+[ext_resource type="Theme" uid="uid://b6fk86oisl636" path="res://Assets/theme/panelHead.tres" id="2_tqabd"]
+[ext_resource type="FontFile" uid="uid://58l2dvgu2fya" path="res://Assets/font/GermaniaOne-Regular.ttf" id="3_pwqwy"]
+[ext_resource type="Texture2D" uid="uid://di4saqk627tjc" path="res://Assets/Background/gridBg.png" id="4_4dutq"]
+[ext_resource type="Theme" uid="uid://vi17tkyrdjeh" path="res://Assets/theme/panel.tres" id="5_xogkv"]
+[ext_resource type="Theme" uid="uid://c5v71qral7qcg" path="res://Assets/styles/MAQ.tres" id="6_uymix"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h8wuk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+theme = ExtResource("2_tqabd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="btnBack" type="Button" parent="VBoxContainer/ColorRect/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pwqwy")
+theme_override_font_sizes/font_size = 36
+text = "BACK "
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.619608, 0.490196, 0.156863, 0.729412)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="VBoxContainer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="VBoxContainer/ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1152, 648)
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/ParallaxBackground/ParallaxLayer"]
+scale = Vector2(0.900781, 0.901389)
+texture = ExtResource("4_4dutq")
+centered = false
+
+[node name="ColorRect" type="Panel" parent="."]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+offset_left = 121.0
+offset_top = 57.0
+offset_right = 1004.0
+offset_bottom = 654.0
+size_flags_vertical = 3
+theme = ExtResource("5_xogkv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.141
+anchor_top = 0.145
+anchor_right = 0.863
+anchor_bottom = 1.0
+offset_left = -16.432
+offset_top = 2.04
+offset_right = 9.82404
+offset_bottom = 568.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="part1" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="txtTitle" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_pwqwy")
+theme_override_font_sizes/font_size = 81
+text = "Introduction to Object Oriented Programming"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="RichTextLabel2" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pwqwy")
+theme_override_font_sizes/font_size = 31
+text = "Java is one of the most popular programming languages"
+autowrap_mode = 2
+
+[node name="RichTextLabel4" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pwqwy")
+theme_override_font_sizes/font_size = 31
+text = "
+Object-Oriented Programming is a paradigm that has many basic terminologies such as classes, object, encapsulation, inheritance, data abstraction & polymorphism."
+autowrap_mode = 2
+
+[node name="RichTextLabel5" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pwqwy")
+theme_override_font_sizes/font_size = 31
+text = "
+In Java, classes, and objects, along with their attributes and methods, are connected to
+everything. For instance, a car is an object in the real world. The car has features like colour
+and weight, as well as functions like brake and drive."
+autowrap_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="MAQ" type="MarginContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
+layout_mode = 2
+theme = ExtResource("6_uymix")
+
+[node name="Panel" type="Panel" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ"]
+layout_mode = 2
+theme = ExtResource("6_uymix")
+
+[node name="MAQ" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ"]
+layout_mode = 2
+
+[node name="Maq Title" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pwqwy")
+theme_override_font_sizes/font_size = 31
+text = "Question:"
+autowrap_mode = 2
+
+[node name="RichTextLabel3" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pwqwy")
+theme_override_font_sizes/font_size = 31
+text = "Which is the terminologie in Object Oriented Programming(OOP)?"
+autowrap_mode = 2
+
+[node name="questions" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="answer1" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ/questions"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pwqwy")
+text = "Acceleration"
+alignment = 0
+
+[node name="answer2" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ/questions"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_pwqwy")
+text = "Inheritance"
+alignment = 0
+text_overrun_behavior = 2
+
+[node name="answer3" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ/questions"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pwqwy")
+text = "Compression"
+alignment = 0
+
+[node name="answer4" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ/questions"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_pwqwy")
+text = "Sibling"
+alignment = 0
+
+[node name="part2" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer/part2"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="RichTextLabel3" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pwqwy")
+theme_override_font_sizes/font_size = 31
+text = "Good, let's continue!"
+autowrap_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer/part2"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Button" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part2"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_pwqwy")
+text = "NEXT
+"
+
+[connection signal="pressed" from="VBoxContainer/ColorRect/HBoxContainer/btnBack" to="." method="_on_btn_back_pressed"]
+[connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ/questions/answer2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/part2/Button" to="." method="_on_button_pressed"]

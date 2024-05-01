@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://vi17tkyrdjeh"]
+
+[ext_resource type="Texture2D" uid="uid://doa8lc25qsmmu" path="res://Assets/Tiny Swords/Tiny Swords (Update 010)/UI/Banners/Carved_9Slides.png" id="1_3ko1q"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rgks8"]
+texture = ExtResource("1_3ko1q")
+texture_margin_right = 4.0
+region_rect = Rect2(0, 0, 192, 191)
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_rgks8")

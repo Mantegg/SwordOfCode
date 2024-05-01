@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0we5r3f8xc3u"]
+[gd_scene load_steps=13 format=3 uid="uid://d0we5r3f8xc3u"]
 
 [ext_resource type="Texture2D" uid="uid://dabs50oux3ouk" path="res://Assets/SOC LOGO.png" id="1_hdtvs"]
 [ext_resource type="Script" path="res://UI/MainMenu.gd" id="1_py81k"]
-[ext_resource type="StyleBox" uid="uid://bpa0jeurqmndr" path="res://Assets/styles/menuButton.tres" id="2_8g8wn"]
 [ext_resource type="Texture2D" uid="uid://dfhni6j00dy5r" path="res://Assets/Background/layers/sky.png" id="2_nrlsi"]
 [ext_resource type="Texture2D" uid="uid://co5urc0t7glvp" path="res://Assets/Background/layers/rocks_1.png" id="3_j8we8"]
 [ext_resource type="Texture2D" uid="uid://d25q64gtuxlav" path="res://Assets/Background/layers/rocks_2.png" id="4_kp6e7"]
@@ -10,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://wufgu6vi4qg1" path="res://Assets/Background/layers/clouds_2.png" id="6_iffxx"]
 [ext_resource type="Texture2D" uid="uid://tdc20vic0qry" path="res://Assets/Background/layers/clouds_3.png" id="7_ip4fs"]
 [ext_resource type="Texture2D" uid="uid://c8d4hmc3ivay6" path="res://Assets/Background/layers/clouds_4.png" id="8_py01d"]
+[ext_resource type="FontFile" uid="uid://b4xqfa0tq5nrc" path="res://Assets/font/new_font_file.tres" id="10_lmk2n"]
+[ext_resource type="StyleBox" uid="uid://cnlc1nw5340e5" path="res://Assets/button.tres" id="11_kt8j0"]
+[ext_resource type="FontFile" uid="uid://58l2dvgu2fya" path="res://Assets/font/GermaniaOne-Regular.ttf" id="12_32125"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -104,8 +106,8 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -240.0
-offset_bottom = 240.0
+offset_top = -327.0
+offset_bottom = 291.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -4.36733e-05
@@ -122,6 +124,7 @@ texture = ExtResource("1_hdtvs")
 
 [node name="buttons" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/buttons"]
 layout_mode = 2
@@ -130,9 +133,12 @@ theme_override_constants/margin_right = 200
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer/buttons/MarginContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.917647, 0.917647, 0.917647, 1)
+theme_override_fonts/font = ExtResource("10_lmk2n")
 theme_override_font_sizes/font_size = 51
-theme_override_styles/normal = ExtResource("2_8g8wn")
-theme_override_styles/hover = ExtResource("2_8g8wn")
+theme_override_styles/normal = ExtResource("11_kt8j0")
+theme_override_styles/hover = ExtResource("11_kt8j0")
 text = "PLAY"
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/buttons"]
@@ -142,9 +148,12 @@ theme_override_constants/margin_right = 200
 
 [node name="Select" type="Button" parent="MarginContainer/VBoxContainer/buttons/MarginContainer2"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.917647, 0.917647, 0.917647, 1)
+theme_override_fonts/font = ExtResource("12_32125")
 theme_override_font_sizes/font_size = 51
-theme_override_styles/normal = ExtResource("2_8g8wn")
-theme_override_styles/hover = ExtResource("2_8g8wn")
+theme_override_styles/normal = ExtResource("11_kt8j0")
+theme_override_styles/hover = ExtResource("11_kt8j0")
 text = "SELECT LESSONS"
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/buttons"]
@@ -154,9 +163,12 @@ theme_override_constants/margin_right = 200
 
 [node name="Option" type="Button" parent="MarginContainer/VBoxContainer/buttons/MarginContainer3"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.917647, 0.917647, 0.917647, 1)
+theme_override_fonts/font = ExtResource("12_32125")
 theme_override_font_sizes/font_size = 51
-theme_override_styles/normal = ExtResource("2_8g8wn")
-theme_override_styles/hover = ExtResource("2_8g8wn")
+theme_override_styles/normal = ExtResource("11_kt8j0")
+theme_override_styles/hover = ExtResource("11_kt8j0")
 text = "OPTIONS"
 
 [node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer/buttons"]
@@ -166,9 +178,12 @@ theme_override_constants/margin_right = 200
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/buttons/MarginContainer4"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.917647, 0.917647, 0.917647, 1)
+theme_override_fonts/font = ExtResource("12_32125")
 theme_override_font_sizes/font_size = 51
-theme_override_styles/normal = ExtResource("2_8g8wn")
-theme_override_styles/hover = ExtResource("2_8g8wn")
+theme_override_styles/normal = ExtResource("11_kt8j0")
+theme_override_styles/hover = ExtResource("11_kt8j0")
 text = "QUIT
 "
 
