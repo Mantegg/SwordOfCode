@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://js5np5r2pfve"]
 
-[ext_resource type="Script" path="res://UI/CodingSpace.gd" id="1_6wxd8"]
+[ext_resource type="Script" path="res://Course/Template/CodingSpace.gd" id="1_6wxd8"]
 [ext_resource type="FontFile" uid="uid://58l2dvgu2fya" path="res://Assets/font/GermaniaOne-Regular.ttf" id="2_4utgf"]
 [ext_resource type="Theme" uid="uid://b6fk86oisl636" path="res://Assets/theme/panelHead.tres" id="2_mpjq2"]
 [ext_resource type="Texture2D" uid="uid://di4saqk627tjc" path="res://Assets/Background/gridBg.png" id="2_ndno7"]

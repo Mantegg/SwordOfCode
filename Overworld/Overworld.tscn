@@ -50,3 +50,5 @@ shape = SubResource("CircleShape2D_slfux")
 
 [node name="SwordInStone" parent="." instance=ExtResource("6_jojh5")]
 position = Vector2(240, 527)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -16,10 +16,9 @@ func _on_btn_run_pressed():
 	print("post input")
 	var javaCode = $HSplitContainer/ColorRect2/Code.text
 	var encodedJavaCode = Marshalls.utf8_to_base64(javaCode)
-	#print(javaCode)
-	#print(encodedJavaCode)
+
 	$HTTPRequestInput.cancel_request()
-	$HTTPRequestInput.request("http://localhost/SwordOfCode/createSubmission.php?sourceCode=" + encodedJavaCode)
+	$HTTPRequestInput.request("http://localhost/SwordOfCode/judge0/createSubmission.php?sourceCode=" + encodedJavaCode)
 	$HSplitContainer/TabContainer.current_tab = 1
 
 func _on_btn_reset_pressed():
@@ -35,7 +34,7 @@ func _on_http_request_input_request_completed(result, response_code, headers, bo
 
 func _on_timer_timeout():
 	print("request output")
-	$HTTPRequestOutput.request("http://localhost/SwordOfCode/getSubmission.php?token="+token)
+	$HTTPRequestOutput.request("http://localhost/SwordOfCode/judge0/getSubmission.php?token="+token)
 
 func _on_http_request_output_request_completed(result, response_code, headers, body):
 	print("get output")
@@ -44,13 +43,13 @@ func _on_http_request_output_request_completed(result, response_code, headers, b
 	var outputStr
 	if output["stdout"]:
 		outputStr = Marshalls.base64_to_utf8(output["stdout"])
-		$Window.visible = true
+		
 		lblOutput.text = outputStr
 	elif output["compile_output"]:
 		outputStr = Marshalls.base64_to_utf8(output["compile_output"])
 		lblOutput.text = outputStr
 	else:
-		pass
+		$Window.visible = true
 		
 	$HTTPRequestOutput.cancel_request()
 

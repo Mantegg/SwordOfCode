@@ -1,0 +1,270 @@
+[gd_scene load_steps=6 format=3 uid="uid://bp6kvi0nhd22s"]
+
+[ext_resource type="Script" path="res://Course/Template/CodingSpace.gd" id="1_i6ib2"]
+[ext_resource type="Theme" uid="uid://b6fk86oisl636" path="res://Assets/theme/panelHead.tres" id="2_a08hj"]
+[ext_resource type="FontFile" uid="uid://58l2dvgu2fya" path="res://Assets/font/GermaniaOne-Regular.ttf" id="3_fw2ex"]
+[ext_resource type="Texture2D" uid="uid://di4saqk627tjc" path="res://Assets/Background/gridBg.png" id="4_juk5p"]
+[ext_resource type="Texture2D" uid="uid://bgul06qho22p1" path="res://Course/Main/Topic1/resource/g.png" id="5_q1m33"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i6ib2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+theme = ExtResource("2_a08hj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="btnBack" type="Button" parent="VBoxContainer/ColorRect/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fw2ex")
+theme_override_font_sizes/font_size = 36
+text = "BACK "
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.619608, 0.490196, 0.156863, 0)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="VBoxContainer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="VBoxContainer/ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1152, 648)
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/ParallaxBackground/ParallaxLayer"]
+scale = Vector2(0.900781, 0.901389)
+texture = ExtResource("4_juk5p")
+centered = false
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 2
+offset_top = 65.0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+split_offset = 550
+
+[node name="ColorRect2" type="ColorRect" parent="HSplitContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.427451, 0.27451, 0.152941, 1)
+
+[node name="Code" type="TextEdit" parent="HSplitContainer/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "public class Main {
+    public static void main(String[] args) {
+        
+    }
+}"
+placeholder_text = "Your code here"
+autowrap_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/ColorRect2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -54.0
+offset_bottom = 66.0
+grow_horizontal = 0
+
+[node name="btnRun" type="Button" parent="HSplitContainer/ColorRect2/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Run your code an see the output"
+text = "RUN"
+
+[node name="btnReset" type="Button" parent="HSplitContainer/ColorRect2/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Reset your coding space"
+text = "RESET"
+
+[node name="TabContainer" type="TabContainer" parent="HSplitContainer"]
+layout_mode = 2
+
+[node name="Question" type="ColorRect" parent="HSplitContainer/TabContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.329412, 0.203922, 0.105882, 1)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HSplitContainer/TabContainer/Question"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 35
+
+[node name="Goals" type="VBoxContainer" parent="HSplitContainer/TabContainer/Question/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HSplitContainer/TabContainer/Question/VBoxContainer2/Goals"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Goals :"
+
+[node name="Sprite2D" type="Sprite2D" parent="HSplitContainer/TabContainer/Question/VBoxContainer2/Goals"]
+position = Vector2(411, 151)
+scale = Vector2(0.602484, 0.602484)
+texture = ExtResource("5_q1m33")
+
+[node name="HSeparator" type="HSeparator" parent="HSplitContainer/TabContainer/Question/VBoxContainer2/Goals"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label2" type="Label" parent="HSplitContainer/TabContainer/Question/VBoxContainer2/Goals"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Based on the UML below, turn it 
+into a java coding.
+
+
+"
+autowrap_mode = 2
+
+[node name="Method" type="VBoxContainer" parent="HSplitContainer/TabContainer/Question/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HSplitContainer/TabContainer/Question/VBoxContainer2/Method"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Method :"
+
+[node name="HSeparator" type="HSeparator" parent="HSplitContainer/TabContainer/Question/VBoxContainer2/Method"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label2" type="Label" parent="HSplitContainer/TabContainer/Question/VBoxContainer2/Method"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "- name should be similar to the one from UML.
+- Check for the modifier"
+autowrap_mode = 2
+
+[node name="Control" type="VBoxContainer" parent="HSplitContainer/TabContainer/Question/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="btnHint" type="Button" parent="HSplitContainer/TabContainer/Question/VBoxContainer2/Control"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "*Show Hint*"
+flat = true
+alignment = 0
+
+[node name="Hint" type="VBoxContainer" parent="HSplitContainer/TabContainer/Question/VBoxContainer2/Control"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HSplitContainer/TabContainer/Question/VBoxContainer2/Control/Hint"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Hint :"
+
+[node name="HSeparator" type="HSeparator" parent="HSplitContainer/TabContainer/Question/VBoxContainer2/Control/Hint"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label2" type="Label" parent="HSplitContainer/TabContainer/Question/VBoxContainer2/Control/Hint"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Class : People
+Attributes : name, age, gender, religion
+method : speak(), sleep(), display()"
+autowrap_mode = 2
+
+[node name="Output" type="ColorRect" parent="HSplitContainer/TabContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.329412, 0.203922, 0.105882, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/TabContainer/Output"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HSplitContainer/TabContainer/Output/VBoxContainer"]
+layout_mode = 2
+text = "Output"
+
+[node name="HSeparator" type="HSeparator" parent="HSplitContainer/TabContainer/Output/VBoxContainer"]
+layout_mode = 2
+
+[node name="lblOutput" type="Label" parent="HSplitContainer/TabContainer/Output/VBoxContainer"]
+custom_minimum_size = Vector2(48.263, 0)
+layout_mode = 2
+text = "
+"
+autowrap_mode = 3
+
+[node name="HTTPRequestInput" type="HTTPRequest" parent="."]
+
+[node name="HTTPRequestOutput" type="HTTPRequest" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+
+[node name="Window" type="Window" parent="."]
+title = "Congratulations!"
+initial_position = 1
+size = Vector2i(335, 100)
+visible = false
+
+[node name="Label" type="Label" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "This concludes the first lesson for you! The demo has now come to an end. Additional content is in development. Thank you!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/ColorRect/HBoxContainer/btnBack" to="." method="_on_btn_back_pressed"]
+[connection signal="pressed" from="HSplitContainer/ColorRect2/VBoxContainer/btnRun" to="." method="_on_btn_run_pressed"]
+[connection signal="pressed" from="HSplitContainer/ColorRect2/VBoxContainer/btnReset" to="." method="_on_btn_reset_pressed"]
+[connection signal="pressed" from="HSplitContainer/TabContainer/Question/VBoxContainer2/Control/btnHint" to="." method="_on_btn_hint_pressed"]
+[connection signal="request_completed" from="HTTPRequestInput" to="." method="_on_http_request_input_request_completed"]
+[connection signal="request_completed" from="HTTPRequestOutput" to="." method="_on_http_request_output_request_completed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]

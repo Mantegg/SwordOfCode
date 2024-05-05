@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://chkwkfj1lel01"]
+[gd_scene load_steps=8 format=3 uid="uid://chkwkfj1lel01"]
 
-[ext_resource type="Script" path="res://Course/Main/Topic1/1.1.gd" id="1_h8wuk"]
+[ext_resource type="Script" path="res://Course/Main/Topic1/1.2.gd" id="1_8qy6w"]
 [ext_resource type="Theme" uid="uid://b6fk86oisl636" path="res://Assets/theme/panelHead.tres" id="2_tqabd"]
 [ext_resource type="FontFile" uid="uid://58l2dvgu2fya" path="res://Assets/font/GermaniaOne-Regular.ttf" id="3_pwqwy"]
 [ext_resource type="Texture2D" uid="uid://di4saqk627tjc" path="res://Assets/Background/gridBg.png" id="4_4dutq"]
 [ext_resource type="Theme" uid="uid://vi17tkyrdjeh" path="res://Assets/theme/panel.tres" id="5_xogkv"]
+[ext_resource type="Texture2D" uid="uid://b8uljrlab1c2y" path="res://Assets/course/1.2a.png" id="6_0c3b2"]
 [ext_resource type="Theme" uid="uid://c5v71qral7qcg" path="res://Assets/styles/MAQ.tres" id="6_uymix"]
 
 [node name="Control" type="Control"]
@@ -14,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_h8wuk")
+script = ExtResource("1_8qy6w")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -80,7 +81,7 @@ anchor_bottom = 1.0
 offset_left = -16.432
 offset_top = 2.04
 offset_right = 9.82404
-offset_bottom = 568.0
+offset_bottom = 2084.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 20
@@ -106,7 +107,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_pwqwy")
 theme_override_font_sizes/font_size = 81
-text = "Introduction to Object Oriented Programming"
+text = "What is class in Java? "
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -119,7 +120,7 @@ custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_pwqwy")
 theme_override_font_sizes/font_size = 31
-text = "Java is one of the most popular programming languages"
+text = "A class is defined as a collection of objects. A class is a blueprint or prototype from which objects are created. "
 autowrap_mode = 2
 
 [node name="RichTextLabel4" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
@@ -128,7 +129,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_pwqwy")
 theme_override_font_sizes/font_size = 31
 text = "
-Object-Oriented Programming is a paradigm that has many basic terminologies such as classes, object, encapsulation, inheritance, data abstraction & polymorphism."
+For example:
+
+There's a brown female puppy  named Lucy. A puppy should be able to walk, eat and bark."
 autowrap_mode = 2
 
 [node name="RichTextLabel5" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
@@ -137,9 +140,35 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_pwqwy")
 theme_override_font_sizes/font_size = 31
 text = "
-In Java, classes, and objects, along with their attributes and methods, are connected to
-everything. For instance, a car is an object in the real world. The car has features like colour
-and weight, as well as functions like brake and drive."
+If we translate into OOP, 
+
+
+
+
+
+
+
+"
+autowrap_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
+position = Vector2(320, 684)
+scale = Vector2(0.499048, 0.499048)
+texture = ExtResource("6_0c3b2")
+
+[node name="RichTextLabel6" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pwqwy")
+theme_override_font_sizes/font_size = 31
+text = "-Class-
+puppy can be set as class name of the entity.
+
+-Attributes-
+attributes are what make the entity is unique. Like its name, fur color, and its gender.
+
+-Methods-
+Methods determine what our entity can do. like barking, eating foods, and walk anywhere it want."
 autowrap_mode = 2
 
 [node name="HSeparator3" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
@@ -162,7 +191,7 @@ custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_pwqwy")
 theme_override_font_sizes/font_size = 31
-text = "Question:"
+text = "Question 1:"
 autowrap_mode = 2
 
 [node name="RichTextLabel3" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ"]
@@ -170,7 +199,7 @@ custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_pwqwy")
 theme_override_font_sizes/font_size = 31
-text = "Which is the terminologie in Object Oriented Programming(OOP)?"
+text = "A Perodua branded car with a red body that can fly. What is a suitable terminology for \"flying\"?"
 autowrap_mode = 2
 
 [node name="questions" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ"]
@@ -179,59 +208,151 @@ layout_mode = 2
 size_flags_vertical = 6
 
 [node name="answer1" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ/questions"]
-unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_pwqwy")
-text = "Acceleration"
+text = "Class"
 alignment = 0
 
 [node name="answer2" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ/questions"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_pwqwy")
-text = "Inheritance"
+text = "Attributes"
 alignment = 0
 text_overrun_behavior = 2
 
 [node name="answer3" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ/questions"]
-unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_pwqwy")
-text = "Compression"
+text = "Method"
 alignment = 0
 
 [node name="answer4" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ/questions"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_pwqwy")
-text = "Sibling"
+text = "Operators"
 alignment = 0
 
 [node name="part2" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
 
-[node name="HSeparator3" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer/part2"]
-layout_mode = 2
-theme_override_constants/separation = 30
-
-[node name="RichTextLabel3" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part2"]
+[node name="RichTextLabel4" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part2"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_pwqwy")
 theme_override_font_sizes/font_size = 31
-text = "Good, let's continue!"
+text = "Correct! if the car can fly, then it is its method.
+Method can also be seen as verb for an entity."
 autowrap_mode = 2
 
-[node name="HSeparator2" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer/part2"]
+[node name="HSeparator5" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer/part2"]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="Button" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part2"]
+[node name="RichTextLabel5" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pwqwy")
+theme_override_font_sizes/font_size = 31
+text = "Attributes and methods required data type.
+
+Example of data types are String, char, int, bool, float and double.
+
+Attributes need data type to know what type of data it can store.
+
+Meanwhile, methods need data type to know what type of data it need to return. If it can't produce return data, its return type will be void."
+autowrap_mode = 2
+
+[node name="MAQ" type="MarginContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/part2"]
+layout_mode = 2
+theme = ExtResource("6_uymix")
+
+[node name="Panel" type="Panel" parent="MarginContainer/ScrollContainer/VBoxContainer/part2/MAQ"]
+layout_mode = 2
+theme = ExtResource("6_uymix")
+
+[node name="MAQ" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/part2/MAQ"]
+layout_mode = 2
+
+[node name="Maq Title" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part2/MAQ/MAQ"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pwqwy")
+theme_override_font_sizes/font_size = 31
+text = "Question 2:"
+autowrap_mode = 2
+
+[node name="RichTextLabel3" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part2/MAQ/MAQ"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pwqwy")
+theme_override_font_sizes/font_size = 31
+text = "Which answer have the correct declaration of attribute and method in java?"
+autowrap_mode = 2
+
+[node name="questions" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/part2/MAQ/MAQ"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="answer1" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part2/MAQ/MAQ/questions"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pwqwy")
+text = "Attribute: public String name = \"Perodua\";
+Method : public void flying(){}"
+alignment = 0
+
+[node name="answer2" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part2/MAQ/MAQ/questions"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_pwqwy")
+text = "Attribute:  $name = \"Perodua\";
+Method : function flying(){}"
+alignment = 0
+text_overrun_behavior = 2
+
+[node name="answer3" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part2/MAQ/MAQ/questions"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pwqwy")
+text = "Attribute: var name = \"Perodua\"
+Method : func flying():"
+alignment = 0
+
+[node name="answer4" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part2/MAQ/MAQ/questions"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_pwqwy")
+text = "Attribute: ame = \"Perodua\";
+Method : def flying():"
+alignment = 0
+
+[node name="part3" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer/part3"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="RichTextLabel3" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part3"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pwqwy")
+theme_override_font_sizes/font_size = 31
+text = "Correct! remember in java, \"String\" should be type with capital 'S'"
+autowrap_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer/part3"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Button" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part3"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_vertical = 3
@@ -240,5 +361,6 @@ text = "NEXT
 "
 
 [connection signal="pressed" from="VBoxContainer/ColorRect/HBoxContainer/btnBack" to="." method="_on_btn_back_pressed"]
-[connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ/questions/answer2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/part2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ/questions/answer3" to="." method="_on_answer_3_pressed"]
+[connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/part2/MAQ/MAQ/questions/answer1" to="." method="_on_answer_1_pressed"]
+[connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/part3/Button" to="." method="_on_button_pressed"]
