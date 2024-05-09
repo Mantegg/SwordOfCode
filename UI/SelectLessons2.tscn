@@ -1,0 +1,138 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1rbptpwykjjn"]
+
+[ext_resource type="Script" path="res://UI/SelectLessons2.gd" id="1_xb00o"]
+[ext_resource type="Theme" uid="uid://b6fk86oisl636" path="res://Assets/theme/panelHead.tres" id="2_7nu8g"]
+[ext_resource type="FontFile" uid="uid://58l2dvgu2fya" path="res://Assets/font/GermaniaOne-Regular.ttf" id="3_f3h1r"]
+[ext_resource type="Texture2D" uid="uid://di4saqk627tjc" path="res://Assets/Background/gridBg.png" id="4_ojpf4"]
+[ext_resource type="Theme" uid="uid://brndtowgbvndd" path="res://Assets/theme/buttonCourse.tres" id="5_wox3i"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xb00o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+theme = ExtResource("2_7nu8g")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="btnBack" type="Button" parent="VBoxContainer/ColorRect/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_f3h1r")
+theme_override_font_sizes/font_size = 36
+text = "BACK "
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.619608, 0.490196, 0.156863, 0.729412)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="VBoxContainer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="VBoxContainer/ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1152, 648)
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/ParallaxBackground/ParallaxLayer"]
+scale = Vector2(0.900781, 0.901389)
+texture = ExtResource("4_ojpf4")
+centered = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+offset_left = 330.0
+offset_top = 95.0
+offset_right = 822.0
+offset_bottom = 618.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_wox3i")
+theme_override_fonts/font = ExtResource("3_f3h1r")
+text = "Lesson 1 - Introduction to Object Oriented Programming"
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_wox3i")
+theme_override_fonts/font = ExtResource("3_f3h1r")
+text = "Lesson 2 - Fundamentals of the Java programming language"
+
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_wox3i")
+theme_override_fonts/font = ExtResource("3_f3h1r")
+disabled = true
+text = "Lesson 3 - Classes and Objects"
+
+[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_wox3i")
+theme_override_fonts/font = ExtResource("3_f3h1r")
+disabled = true
+text = "Lesson 4 - Inheritance and Polymorphism"
+
+[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_wox3i")
+theme_override_fonts/font = ExtResource("3_f3h1r")
+disabled = true
+text = "Lesson 5 - Exception Handling"
+
+[node name="Window" type="Window" parent="."]
+title = "Sorry!"
+initial_position = 1
+size = Vector2i(335, 100)
+visible = false
+
+[node name="Label" type="Label" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "This section is work in progress, you may exit the demo. Please keep update with our progress to know when its done!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/ColorRect/HBoxContainer/btnBack" to="." method="_on_btn_back_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]

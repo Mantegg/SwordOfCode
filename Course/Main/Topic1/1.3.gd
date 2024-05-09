@@ -22,20 +22,25 @@ func _process(delta):
 	parallax.scroll_offset += direction * speed * delta
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://Course/Main/Topic1/CodingSpace.tscn")
+	GlobalAudio.playFX("click")
+	Global.topic2 = true
+	get_tree().change_scene_to_file("res://Overworld/Overworld.tscn")
 
 func _on_btn_back_pressed():
-	get_tree().change_scene_to_file("res://UI/SelectLessons.tscn")
+	GlobalAudio.playFX("click")
+	get_tree().change_scene_to_file("res://Course/Main/Topic1/1.2.tscn")
 
 	
 func _on_answer_1_pressed():
+	GlobalAudio.playFX("yes")
 	$MarginContainer/ScrollContainer/VBoxContainer/part2.visible = true
 	answer2.disabled = true
 	answer3.disabled = true
 	answer4.disabled = true
 
 func _on_answer_2_pressed():
+	GlobalAudio.playFX("yes")
 	$MarginContainer/ScrollContainer/VBoxContainer/part3.visible = true
-	answer21.visible = false
-	answer23.visible = false
-	answer24.visible = false
+	answer21.disabled = false
+	answer23.disabled = false
+	answer24.disabled = false

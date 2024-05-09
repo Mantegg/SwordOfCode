@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://hu1v677gvvig"]
+[gd_scene load_steps=11 format=3 uid="uid://hu1v677gvvig"]
 
 [ext_resource type="Script" path="res://Overworld/Characters/Player.gd" id="1_13hae"]
 [ext_resource type="Texture2D" uid="uid://clc5kohjn4oci" path="res://Assets/sprites/Player.png" id="2_1qvq1"]
 [ext_resource type="Texture2D" uid="uid://c2r1dyrqluao2" path="res://Assets/btnF.png" id="3_gxfdl"]
+[ext_resource type="PackedScene" uid="uid://c8ak7pdbsda0h" path="res://UI/world_menu.tscn" id="4_i24e2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_48k7k"]
-size = Vector2(55, 113)
+[sub_resource type="CircleShape2D" id="CircleShape2D_p7o1n"]
+radius = 20.0998
 
 [sub_resource type="Animation" id="Animation_cohg5"]
 length = 0.001
@@ -99,7 +100,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7em0l"]
-radius = 66.0
+radius = 37.1214
 
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
@@ -121,9 +122,8 @@ scale = Vector2(0.061551, 0.0564443)
 texture = ExtResource("3_gxfdl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-0.500004, 0.499996)
-shape = SubResource("RectangleShape2D_48k7k")
+position = Vector2(-1, 25)
+shape = SubResource("CircleShape2D_p7o1n")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -135,11 +135,24 @@ collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4, 14)
 shape = SubResource("CircleShape2D_7em0l")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.765, 1.765)
 position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="worldMenu" parent="CanvasLayer" instance=ExtResource("4_i24e2")]
+visible = false
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+size_flags_horizontal = 6
+size_flags_vertical = 3
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cow1ugq1pt4b"]
+
+[ext_resource type="AudioStream" uid="uid://kyg0bbe0ieta" path="res://Assets/soundEffect/xDeviruchi - The Final of The Fantasy.wav" id="1_fkfdn"]
+[ext_resource type="Script" path="res://globalAudio.gd" id="2_08xnq"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_fkfdn")
+volume_db = -10.0
+autoplay = true
+script = ExtResource("2_08xnq")

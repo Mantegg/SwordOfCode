@@ -105,6 +105,7 @@ theme_override_constants/separation = 10
 [node name="txtTitle" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_pwqwy")
 theme_override_font_sizes/font_size = 81
 text = "What is class in Java? "
@@ -118,6 +119,7 @@ theme_override_constants/separation = 30
 [node name="RichTextLabel2" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_pwqwy")
 theme_override_font_sizes/font_size = 31
 text = "A class is defined as a collection of objects. A class is a blueprint or prototype from which objects are created. "
@@ -126,6 +128,7 @@ autowrap_mode = 2
 [node name="RichTextLabel4" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_pwqwy")
 theme_override_font_sizes/font_size = 31
 text = "
@@ -137,6 +140,7 @@ autowrap_mode = 2
 [node name="RichTextLabel5" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_pwqwy")
 theme_override_font_sizes/font_size = 31
 text = "
@@ -159,6 +163,7 @@ texture = ExtResource("6_0c3b2")
 [node name="RichTextLabel6" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_pwqwy")
 theme_override_font_sizes/font_size = 31
 text = "-Class-
@@ -189,6 +194,7 @@ layout_mode = 2
 [node name="Maq Title" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_pwqwy")
 theme_override_font_sizes/font_size = 31
 text = "Question 1:"
@@ -197,6 +203,7 @@ autowrap_mode = 2
 [node name="RichTextLabel3" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_pwqwy")
 theme_override_font_sizes/font_size = 31
 text = "A Perodua branded car with a red body that can fly. What is a suitable terminology for \"flying\"?"

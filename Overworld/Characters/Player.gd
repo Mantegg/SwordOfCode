@@ -21,6 +21,11 @@ func _physics_process(delta):
 		animationPlayer.play("walk")
 	
 	move_and_slide()
+	
+func _input(event):
+	if event.is_action_pressed("menu"):
+		GlobalAudio.playFX("click")
+		$CanvasLayer/worldMenu.visible = true
 
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("interect"):

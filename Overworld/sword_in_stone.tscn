@@ -1,17 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://bw8dqtiy5l5bp"]
+[gd_scene load_steps=7 format=3 uid="uid://bw8dqtiy5l5bp"]
 
 [ext_resource type="Texture2D" uid="uid://tqyunbxq6w4n" path="res://Assets/swordInStone.png" id="1_dq1fs"]
 [ext_resource type="Script" path="res://Overworld/actionable.gd" id="2_5v881"]
+[ext_resource type="Script" path="res://Overworld/sword_in_stone.gd" id="2_eve0x"]
 [ext_resource type="Resource" uid="uid://7loesk5vleqt" path="res://dialogue/getSword.dialogue" id="3_26eit"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrya7"]
 size = Vector2(906.235, 770.432)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wai7"]
+size = Vector2(641.975, 543.21)
 
 [node name="SwordInStone" type="Sprite2D"]
 position = Vector2(177, 286)
 scale = Vector2(0.1215, 0.1215)
 texture = ExtResource("1_dq1fs")
 hframes = 2
+script = ExtResource("2_eve0x")
 
 [node name="Actionable" type="Area2D" parent="."]
 collision_layer = 16
@@ -22,3 +27,9 @@ dialogueResource = ExtResource("3_26eit")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
 position = Vector2(7.78833, 116.842)
 shape = SubResource("RectangleShape2D_wrya7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-24.6909, 172.84)
+shape = SubResource("RectangleShape2D_1wai7")

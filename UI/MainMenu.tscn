@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0we5r3f8xc3u"]
+[gd_scene load_steps=16 format=3 uid="uid://d0we5r3f8xc3u"]
 
-[ext_resource type="Texture2D" uid="uid://dabs50oux3ouk" path="res://Assets/SOC LOGO.png" id="1_hdtvs"]
 [ext_resource type="Script" path="res://UI/MainMenu.gd" id="1_py81k"]
 [ext_resource type="Texture2D" uid="uid://dfhni6j00dy5r" path="res://Assets/Background/layers/sky.png" id="2_nrlsi"]
 [ext_resource type="Texture2D" uid="uid://co5urc0t7glvp" path="res://Assets/Background/layers/rocks_1.png" id="3_j8we8"]
@@ -9,9 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://wufgu6vi4qg1" path="res://Assets/Background/layers/clouds_2.png" id="6_iffxx"]
 [ext_resource type="Texture2D" uid="uid://tdc20vic0qry" path="res://Assets/Background/layers/clouds_3.png" id="7_ip4fs"]
 [ext_resource type="Texture2D" uid="uid://c8d4hmc3ivay6" path="res://Assets/Background/layers/clouds_4.png" id="8_py01d"]
+[ext_resource type="Texture2D" uid="uid://c18u0co6a5ife" path="res://Assets/SWORD OF CODE NO BACKGROUND demo.png" id="9_vsqsw"]
 [ext_resource type="FontFile" uid="uid://b4xqfa0tq5nrc" path="res://Assets/font/new_font_file.tres" id="10_lmk2n"]
 [ext_resource type="StyleBox" uid="uid://cnlc1nw5340e5" path="res://Assets/button.tres" id="11_kt8j0"]
+[ext_resource type="AudioStream" uid="uid://bfdrqu8utid4n" path="res://Assets/soundEffect/Play.mp3" id="12_3tpqj"]
 [ext_resource type="FontFile" uid="uid://58l2dvgu2fya" path="res://Assets/font/GermaniaOne-Regular.ttf" id="12_32125"]
+[ext_resource type="AudioStream" uid="uid://5nfpagt14m6s" path="res://Assets/soundEffect/click.mp3" id="14_7jon3"]
+[ext_resource type="AudioStream" uid="uid://ci4phh8sr8i6l" path="res://Assets/soundEffect/xDeviruchi - And The Journey Begins .wav" id="15_oo2ua"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -106,11 +109,12 @@ rotation = -4.36733e-05
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+[node name="logo" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(31, 0)
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("1_hdtvs")
+texture = ExtResource("9_vsqsw")
+expand_mode = 1
 
 [node name="buttons" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -131,6 +135,9 @@ theme_override_styles/normal = ExtResource("11_kt8j0")
 theme_override_styles/hover = ExtResource("11_kt8j0")
 text = "PLAY"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/buttons/MarginContainer/Play"]
+stream = ExtResource("12_3tpqj")
+
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/buttons"]
 layout_mode = 2
 theme_override_constants/margin_left = 200
@@ -146,20 +153,8 @@ theme_override_styles/normal = ExtResource("11_kt8j0")
 theme_override_styles/hover = ExtResource("11_kt8j0")
 text = "SELECT LESSONS"
 
-[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/buttons"]
-layout_mode = 2
-theme_override_constants/margin_left = 200
-theme_override_constants/margin_right = 200
-
-[node name="Option" type="Button" parent="MarginContainer/VBoxContainer/buttons/MarginContainer3"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.917647, 0.917647, 0.917647, 1)
-theme_override_fonts/font = ExtResource("12_32125")
-theme_override_font_sizes/font_size = 51
-theme_override_styles/normal = ExtResource("11_kt8j0")
-theme_override_styles/hover = ExtResource("11_kt8j0")
-text = "OPTIONS"
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/buttons/MarginContainer2/Select"]
+stream = ExtResource("14_7jon3")
 
 [node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer/buttons"]
 layout_mode = 2
@@ -177,56 +172,43 @@ theme_override_styles/hover = ExtResource("11_kt8j0")
 text = "QUIT
 "
 
-[node name="Optionpopup" type="Control" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/buttons/MarginContainer4/Quit"]
+stream = ExtResource("14_7jon3")
+
+[node name="Window" type="Window" parent="."]
+title = "Alert!"
+initial_position = 1
+size = Vector2i(335, 100)
 visible = false
-layout_mode = 1
+
+[node name="Label" type="Label" parent="Window"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Press back button to exit the game"
+horizontal_alignment = 1
+autowrap_mode = 2
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Optionpopup"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-ratio = 1.8107
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Window/Label"]
+stream = ExtResource("14_7jon3")
 
-[node name="MarginContainer" type="MarginContainer" parent="Optionpopup/AspectRatioContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 165
-theme_override_constants/margin_top = 95
-theme_override_constants/margin_right = 165
-theme_override_constants/margin_bottom = 95
-
-[node name="ColorRect" type="ColorRect" parent="Optionpopup/AspectRatioContainer/MarginContainer"]
-layout_mode = 2
-color = Color(0.647059, 0.517647, 0.321569, 1)
-
-[node name="Label" type="Label" parent="Optionpopup/AspectRatioContainer/MarginContainer/ColorRect"]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 54.0
+offset_right = 40.0
 offset_bottom = 23.0
-text = "Option"
+text = "Demo v1.5"
 
-[node name="CheckBox" type="CheckBox" parent="Optionpopup/AspectRatioContainer/MarginContainer/ColorRect"]
-layout_mode = 0
-offset_left = 117.0
-offset_top = 120.109
-offset_right = 141.0
-offset_bottom = 144.109
-
-[node name="Label2" type="Label" parent="Optionpopup/AspectRatioContainer/MarginContainer/ColorRect"]
-layout_mode = 0
-offset_left = 148.0
-offset_top = 119.109
-offset_right = 202.0
-offset_bottom = 142.109
-text = "Sounds"
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_oo2ua")
+volume_db = -10.254
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/buttons/MarginContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/buttons/MarginContainer2/Select" to="." method="_on_select_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/buttons/MarginContainer4/Quit" to="." method="_on_quit_pressed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwarc7iyqwjyp"]
+[gd_scene load_steps=8 format=3 uid="uid://bwarc7iyqwjyp"]
 
 [ext_resource type="Script" path="res://UI/SelectLessons.gd" id="1_7l5s1"]
 [ext_resource type="Theme" uid="uid://b6fk86oisl636" path="res://Assets/theme/panelHead.tres" id="2_bnyym"]
 [ext_resource type="Texture2D" uid="uid://di4saqk627tjc" path="res://Assets/Background/gridBg.png" id="2_dm43d"]
 [ext_resource type="FontFile" uid="uid://58l2dvgu2fya" path="res://Assets/font/GermaniaOne-Regular.ttf" id="3_o4q4o"]
+[ext_resource type="AudioStream" uid="uid://5nfpagt14m6s" path="res://Assets/soundEffect/click.mp3" id="4_853jb"]
 [ext_resource type="Theme" uid="uid://brndtowgbvndd" path="res://Assets/theme/buttonCourse.tres" id="5_7srm6"]
+[ext_resource type="AudioStream" uid="uid://ev8s8vycmur5" path="res://Assets/soundEffect/xDeviruchi - Title Theme .wav" id="7_d5vbd"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -42,6 +44,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_o4q4o")
 theme_override_font_sizes/font_size = 36
 text = "BACK "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/ColorRect/HBoxContainer/btnBack"]
+stream = ExtResource("4_853jb")
 
 [node name="ColorRect2" type="ColorRect" parent="VBoxContainer"]
 layout_mode = 2
@@ -115,5 +120,15 @@ theme_override_fonts/font = ExtResource("3_o4q4o")
 disabled = true
 text = "Lesson 5 - Exception Handling"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_d5vbd")
+volume_db = -10.0
+autoplay = true
+
 [connection signal="pressed" from="VBoxContainer/ColorRect/HBoxContainer/btnBack" to="." method="_on_btn_back_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

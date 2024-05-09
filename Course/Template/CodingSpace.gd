@@ -18,7 +18,7 @@ func _on_btn_run_pressed():
 	var encodedJavaCode = Marshalls.utf8_to_base64(javaCode)
 
 	$HTTPRequestInput.cancel_request()
-	$HTTPRequestInput.request("http://localhost/SwordOfCode/judge0/createSubmission.php?sourceCode=" + encodedJavaCode)
+	$HTTPRequestInput.request("https://swordofcode.com/judge0/createSubmission.php?sourceCode=" + encodedJavaCode)
 	$HSplitContainer/TabContainer.current_tab = 1
 
 func _on_btn_reset_pressed():
@@ -34,7 +34,7 @@ func _on_http_request_input_request_completed(result, response_code, headers, bo
 
 func _on_timer_timeout():
 	print("request output")
-	$HTTPRequestOutput.request("http://localhost/SwordOfCode/judge0/getSubmission.php?token="+token)
+	$HTTPRequestOutput.request("https://swordofcode.com/judge0/getSubmission.php?token="+token)
 
 func _on_http_request_output_request_completed(result, response_code, headers, body):
 	print("get output")
@@ -63,7 +63,9 @@ func _on_btn_hint_pressed():
 
 
 func _on_btn_back_pressed():
-	get_tree().change_scene_to_file("res://UI/documentation.tscn")
+	get_tree().change_scene_to_file("res://Course/Main/Topic1/1.3.tscn")
 
 func _on_window_close_requested():
 	$Window.visible = false
+	get_tree().change_scene_to_file("res://UI/SelectLessons.tscn")
+	

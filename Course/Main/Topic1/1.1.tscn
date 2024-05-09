@@ -104,6 +104,7 @@ theme_override_constants/separation = 10
 [node name="txtTitle" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ca7tl")
 theme_override_font_sizes/font_size = 81
 text = "Introduction to Object Oriented Programming"
@@ -117,6 +118,7 @@ theme_override_constants/separation = 30
 [node name="RichTextLabel2" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ca7tl")
 theme_override_font_sizes/font_size = 31
 text = "Java is one of the most popular programming languages"
@@ -125,15 +127,17 @@ autowrap_mode = 2
 [node name="RichTextLabel4" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ca7tl")
 theme_override_font_sizes/font_size = 31
 text = "
-Object-Oriented Programming is a paradigm that has many basic terminologies such as classes, object, encapsulation, inheritance, data abstraction & polymorphism."
+Object-Oriented Programming(OOP) is a paradigm that has many basic terminologies such as classes, object, encapsulation, inheritance, data abstraction & polymorphism."
 autowrap_mode = 2
 
 [node name="RichTextLabel5" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ca7tl")
 theme_override_font_sizes/font_size = 31
 text = "
@@ -146,45 +150,47 @@ autowrap_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="MAQ" type="MarginContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
+[node name="MAQ2" type="MarginContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/part1"]
 layout_mode = 2
 theme = ExtResource("6_0p1cn")
 
-[node name="Panel" type="Panel" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ"]
+[node name="Panel" type="Panel" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ2"]
 layout_mode = 2
 theme = ExtResource("6_0p1cn")
 
-[node name="MAQ" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ"]
+[node name="MAQ" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ2"]
 layout_mode = 2
 
-[node name="Maq Title" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ"]
+[node name="Maq Title" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ2/MAQ"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ca7tl")
 theme_override_font_sizes/font_size = 31
 text = "Question:"
 autowrap_mode = 2
 
-[node name="RichTextLabel3" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ"]
+[node name="RichTextLabel3" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ2/MAQ"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ca7tl")
 theme_override_font_sizes/font_size = 31
-text = "Which is the terminologie in Object Oriented Programming(OOP)?"
+text = "Which is the terminologie in OOP?"
 autowrap_mode = 2
 
-[node name="questions" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ"]
+[node name="questions" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ2/MAQ"]
 clip_contents = true
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="answer1" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ/questions"]
+[node name="answer1" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ2/MAQ/questions"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ca7tl")
 text = "Acceleration"
 alignment = 0
 
-[node name="answer2" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ/questions"]
+[node name="answer2" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ2/MAQ/questions"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -193,18 +199,18 @@ text = "Inheritance"
 alignment = 0
 text_overrun_behavior = 2
 
-[node name="answer3" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ/questions"]
+[node name="answer3" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ2/MAQ/questions"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ca7tl")
 text = "Compression"
 alignment = 0
 
-[node name="answer4" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ/questions"]
+[node name="answer4" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ2/MAQ/questions"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_ca7tl")
-text = "Sibling"
+text = "Siblings"
 alignment = 0
 
 [node name="part2" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
@@ -218,6 +224,7 @@ theme_override_constants/separation = 30
 [node name="RichTextLabel3" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/part2"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ca7tl")
 theme_override_font_sizes/font_size = 31
 text = "Good, let's continue!"
@@ -235,6 +242,11 @@ theme_override_fonts/font = ExtResource("3_ca7tl")
 text = "NEXT
 "
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="VBoxContainer/ColorRect/HBoxContainer/btnBack" to="." method="_on_btn_back_pressed"]
-[connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ/MAQ/questions/answer2" to="." method="_on_answer_2_pressed"]
+[connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ2/MAQ/questions/answer1" to="." method="_on_answer_1_pressed"]
+[connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ2/MAQ/questions/answer2" to="." method="_on_answer_2_pressed"]
+[connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ2/MAQ/questions/answer3" to="." method="_on_answer_3_pressed"]
+[connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/part1/MAQ2/MAQ/questions/answer4" to="." method="_on_answer_4_pressed"]
 [connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/part2/Button" to="." method="_on_button_pressed"]
